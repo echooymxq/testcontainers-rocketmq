@@ -31,7 +31,7 @@ public class RocketMQContainer extends GenericContainer<RocketMQContainer> {
     }
 
     public RocketMQContainer(final DockerImageName dockerImageName) {
-        super(dockerImageName.toString());
+        super(dockerImageName);
         dockerImageName.assertCompatibleWith(DEFAULT_IMAGE_NAME);
         withExposedPorts(NAMESRV_PORT, BROKER_PORT, BROKER_PORT - 2);
     }
