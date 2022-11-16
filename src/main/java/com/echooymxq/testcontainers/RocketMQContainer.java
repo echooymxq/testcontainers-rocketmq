@@ -39,7 +39,6 @@ public class RocketMQContainer extends GenericContainer<RocketMQContainer> {
     @Override
     protected void configure() {
         String command = "#!/bin/bash\n";
-        command += "set -m\n";
         command += "./mqnamesrv &\n";
         command += "./mqbroker -n localhost:" + NAMESRV_PORT;
         withCommand("sh", "-c", command);
